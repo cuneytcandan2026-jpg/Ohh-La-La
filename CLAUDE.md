@@ -3,6 +3,10 @@
 ## Always Do First
 - Check `brand_assets/` before writing any frontend code. Use whatever is there — logos, colors, images. No placeholders where real assets exist.
 
+## GitHub & Deployment
+- **NEVER push to GitHub unless the user explicitly asks.** Commit changes locally but do not push.
+- When the user says to push, run `git push origin main` from the repo root (`c:\Users\cuney\OneDrive\Desktop\Claude\Ohh La la`).
+
 ## Dev Server
 - Serve at `http://localhost:3000` via `node serve.mjs` (background). Never screenshot `file:///`.
 - Do not start a second instance if already running.
