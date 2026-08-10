@@ -5,8 +5,8 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = 3000;
-const DIST = path.join(__dirname, 'ohh-la-la-temp', 'dist');
-const BASE = '/Ohh-La-La';
+const DIST = __dirname;
+const BASE = '';
 
 const mime = {
   '.html': 'text/html',
