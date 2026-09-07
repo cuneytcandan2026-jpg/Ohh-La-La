@@ -2,6 +2,11 @@
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
+
+  # Redirect stale Squarespace URLs (still linked from Google Business Profile, old search results, socials)
+  RewriteRule ^s/ohlala_menu-3\.pdf$ /ooh-la-la-menu.pdf [R=301,L]
+  RewriteRule ^jobs/?$ /menu [R=301,L]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
