@@ -2,12 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PDR9GMC4');</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Preload the home hero image so it downloads in parallel with the JS bundle (it is the LCP element) -->
+    <script>
+      if (location.pathname === '/') {
+        var hp = document.createElement('link');
+        hp.rel = 'preload';
+        hp.as = 'image';
+        hp.type = 'image/webp';
+        hp.href = '/brand-assets/hero-1280.webp';
+        hp.setAttribute('imagesrcset', '/brand-assets/hero-640.webp 640w, /brand-assets/hero-960.webp 960w, /brand-assets/hero-1280.webp 1280w, /brand-assets/hero-1920.webp 1920w');
+        hp.setAttribute('imagesizes', '100vw');
+        hp.setAttribute('fetchpriority', 'high');
+        document.head.appendChild(hp);
+      }
+    </script>
+    <!-- Google Tag Manager — deferred until after page load so it doesn't compete with first paint -->
+    <script>
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PDR9GMC4');
+        }, 1500);
+      });
+    </script>
     <!-- End Google Tag Manager -->
     <!-- Google tag (gtag.js) — only loaded after cookie consent is granted, see banner script below -->
     <script>
@@ -105,7 +126,6 @@
     </style>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ooh La La Brasserie | Breakfast, Brunch &amp; Lunch in Enfield</title>
     <meta name="description" content="A new brasserie concept in Enfield, North London. Specialist coffee, soufflé pancakes, Mediterranean-inspired brunch. 238 Hertford Road EN3 5BL." />
     <meta name="robots" content="index, follow" />
@@ -124,7 +144,9 @@
     <meta name="theme-color" content="#1C1B19" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Fonts load without blocking first render (font-display: swap) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
     <script>
       // Decode GitHub Pages SPA redirect: restore the real URL from query param
       (function(l) {
@@ -174,15 +196,30 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-pF8VoPEj.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-IfrDnwGr.css">
+    <script type="module" crossorigin src="/assets/index-MDrgMqLt.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BvvZbTmT.css">
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDR9GMC4"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div id="root"></div>
+    <div id="root"><script>
+      // Static hero backdrop painted before the JS bundle runs; React replaces it on mount.
+      // Mirrors the markup/classes in src/components/sections/Hero.tsx — keep them in sync.
+      if (location.pathname === '/') {
+        document.currentScript.insertAdjacentHTML('afterend',
+          '<section class="grain relative h-[80vh] md:h-dvh min-h-[500px] md:min-h-[600px] flex items-end overflow-hidden bg-charcoal" aria-hidden="true">' +
+            '<div class="absolute inset-0 w-full h-full"><picture class="hero-kb">' +
+              '<source type="image/webp" srcset="/brand-assets/hero-640.webp 640w, /brand-assets/hero-960.webp 960w, /brand-assets/hero-1280.webp 1280w, /brand-assets/hero-1920.webp 1920w" sizes="100vw">' +
+              '<img src="/brand-assets/hero.jpg" alt="" fetchpriority="high" width="2000" height="2000" class="w-full h-full object-cover object-[center_40%] md:object-center">' +
+            '</picture></div>' +
+            '<div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/20"></div>' +
+            '<div class="absolute inset-0 bg-gradient-to-r from-charcoal/40 via-transparent to-transparent"></div>' +
+            '<div class="absolute inset-0 bg-rose/8 mix-blend-multiply"></div>' +
+          '</section>');
+      }
+    </script></div>
 
     <div id="cookie-consent" class="cc-banner" role="region" aria-label="Cookie consent" hidden>
       <div class="cc-banner__card">
