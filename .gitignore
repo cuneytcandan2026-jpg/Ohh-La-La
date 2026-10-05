@@ -3,3 +3,4 @@ temporary screenshots/
 *.png
 !favicon.png
 ohh-la-la-temp/
+!brand-assets/email/*.png

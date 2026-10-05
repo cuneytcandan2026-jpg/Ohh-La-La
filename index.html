@@ -144,6 +144,9 @@
     <meta name="theme-color" content="#1C1B19" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Booking API (Google Apps Script): resolve DNS early, the widget fetches availability on demand -->
+    <link rel="dns-prefetch" href="https://script.google.com" />
+    <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
     <!-- Fonts load without blocking first render (font-display: swap) -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
@@ -188,6 +191,16 @@
       },
       "servesCuisine": ["Breakfast", "Brunch", "Mediterranean", "Coffee", "Cocktails"],
       "priceRange": "£10-£20",
+      "acceptsReservations": "https://www.oohlalabrasserie.com/book",
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.oohlalabrasserie.com/book",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+        },
+        "result": { "@type": "FoodEstablishmentReservation", "name": "Book a table" }
+      },
       "image": "https://www.oohlalabrasserie.com/brand-assets/menu-1.jpg",
       "hasMap": "https://www.google.com/maps/search/?api=1&query=Ooh+La+La+Brasserie+238+Hertford+Road+Enfield+EN3+5BL",
       "sameAs": [
@@ -196,8 +209,11 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-MDrgMqLt.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BvvZbTmT.css">
+    <script type="module" crossorigin src="/assets/index-C7pIHNb7.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-GZhdek4G.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-BnvnyDTF.js">
+    <link rel="modulepreload" crossorigin href="/assets/config-B91TGLr_.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BNdRLgNC.css">
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
