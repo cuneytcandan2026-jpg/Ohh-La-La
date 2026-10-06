@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src https://script.google.com https://script.googleusercontent.com; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The staff dashboard. The markup, CSS and script below "dashboard:" are the
+       Google admin project's (booking-backend/admin/Dashboard*.html), inlined by
+       the plugin in vite.config.ts; src/admin/staff.ts adds the passcode sign-in. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#1C1B19">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Bookings">
+  <title>Ooh La La bookings</title>
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="manifest" href="/admin/manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+  /* Ooh La La tokens — mirror ohh-la-la-temp/tailwind.config.js (HtmlService can't load the site's CSS). */
+  :root {
+    --ink: #1C1B19; --ink-raised: #2E2C29; --rose: #C8476A; --rose-dark: #A33558; --rose-tint: #F6E3E8;
+    --cream: #FAF6F1; --cream-dark: #F0E9DF; --gold: #C9A96E; --gold-tint: #F5EDDC; --white: #FFFFFF;
+    --line: #E4DCD0; --muted: #57524B; --ok: #2F7A5B; --ok-tint: #E3F1EA; --error: #B3261E; --error-tint: #F9E5E3;
+    --shadow-sm: 0 1px 2px rgb(28 27 25 / 0.06), 0 2px 8px rgb(200 71 106 / 0.04);
+    --shadow: 0 4px 18px rgb(28 27 25 / 0.08), 0 2px 6px rgb(200 71 106 / 0.06);
+    --radius: 12px; --radius-card: 18px; --control-h: 48px; --touch: 44px;
+    --ease: cubic-bezier(0.34, 1.56, 0.64, 1); --dur: 180ms;
+    --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; font-family: var(--sans); font-size: 16px; line-height: 1.6; color: var(--ink); background: var(--cream); }
+  a { color: var(--rose-dark); }
+  :focus-visible { outline: 3px solid var(--rose-dark); outline-offset: 2px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  h2, h3 { font-family: var(--serif); letter-spacing: -0.02em; }
+
+  .bar { display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: var(--ink); color: var(--cream); position: sticky; top: 0; z-index: 5; }
+  .bar-logo { height: 22px; width: auto; display: block; }
+  .bar-title { font-weight: 700; margin-right: auto; }
+  .bar :focus-visible { outline-color: var(--gold); }
+
+  main { max-width: 820px; margin: 0 auto; padding: 16px 16px 48px; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: var(--touch); padding: 0 16px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--white); color: var(--ink); font: inherit; font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer; transition: transform var(--dur) var(--ease), opacity var(--dur); }
+  .btn:hover { border-color: var(--ink); }
+  .btn:active { transform: scale(0.96); }
+  .btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+  .btn--primary { background: var(--rose-dark); border-color: var(--rose-dark); color: var(--cream); }
+  .btn--primary:hover { background: #8E2C4C; border-color: #8E2C4C; }
+  .btn--ok { background: var(--ok); border-color: var(--ok); color: var(--white); }
+  .btn--danger { border-color: var(--error); color: var(--error); }
+  .btn--danger:hover { background: var(--error); color: var(--white); }
+  .btn--on-dark { background: transparent; border-color: rgb(250 246 241 / 0.5); color: var(--cream); }
+  .btn--on-dark:hover { border-color: var(--cream); }
+  .btn--small { min-height: 36px; padding: 0 12px; font-size: 14px; }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:active { transform: none; } }
+
+  .banner { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; padding: 14px 16px; margin-bottom: 16px; border-radius: var(--radius-card); background: var(--gold-tint); border: 1px solid var(--gold); }
+  .banner p { margin: 0; }
+
+  .toolbar { display: grid; gap: 12px; margin-bottom: 12px; }
+  .tabs { display: flex; gap: 4px; padding: 4px; background: var(--cream-dark); border-radius: 999px; overflow-x: auto; }
+  .tab { flex: 1 0 auto; min-height: var(--touch); padding: 0 14px; border: 0; border-radius: 999px; background: transparent; font: inherit; font-weight: 700; font-size: 15px; color: var(--muted); cursor: pointer; white-space: nowrap; }
+  .tab[aria-selected="true"] { background: var(--white); color: var(--ink); box-shadow: var(--shadow-sm); }
+  .input { width: 100%; min-height: var(--control-h); padding: 10px 14px; border: 1.5px solid var(--line); border-radius: var(--radius); font: inherit; background: var(--white); color: var(--ink); }
+  .input:focus-visible { border-color: var(--rose-dark); outline-offset: 0; }
+  textarea.input { min-height: 88px; resize: vertical; }
+
+  .status { min-height: 1.6em; margin: 0 0 8px; color: var(--muted); font-weight: 700; }
+  .status[data-state="error"] { color: var(--error); }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  .stat { padding: 14px 16px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); }
+  .stat b { display: block; font-family: var(--serif); font-size: 34px; line-height: 1; }
+  .stat span { color: var(--muted); font-size: 14px; }
+
+  .load { padding: 16px; margin-bottom: 20px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); }
+  .load h3 { margin: 0 0 4px; font-size: 22px; }
+  .load p { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+  .load-row { display: grid; grid-template-columns: 52px 1fr 88px; align-items: center; gap: 10px; font-size: 14px; min-height: 26px; }
+  .load-bar { height: 12px; border-radius: 999px; background: var(--cream-dark); overflow: hidden; }
+  .load-fill { height: 100%; border-radius: 999px; background: var(--rose); transform-origin: left; }
+  .load-fill[data-level="high"] { background: var(--gold); }
+  .load-fill[data-level="full"] { background: var(--error); }
+  .load-row[data-closed="true"] { opacity: 0.45; }
+  .load-num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  .day { margin: 24px 0 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); padding: 16px; margin-bottom: 12px; }
+  .card--next { border-color: var(--rose); box-shadow: var(--shadow); }
+  .card--done { opacity: 0.72; }
+  .card-top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .time { font-family: var(--serif); font-size: 28px; font-weight: 700; line-height: 1; margin-right: 4px; }
+  .card h3 { margin: 8px 0 10px; font-size: 22px; line-height: 1.2; }
+  .requests { margin: 0 0 12px; padding: 10px 12px; border-radius: var(--radius); background: var(--gold-tint); border-left: 4px solid var(--gold); white-space: pre-wrap; overflow-wrap: anywhere; }
+  .requests strong { display: block; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; background: var(--cream-dark); color: var(--ink); white-space: nowrap; }
+  .chip--party { background: var(--ink); color: var(--cream); }
+  .chip--ok { background: var(--ok-tint); color: var(--ok); }
+  .chip--warn { background: var(--error-tint); color: var(--error); }
+  .chip--rose { background: var(--rose-tint); color: var(--rose-dark); }
+  .chip--gold { background: var(--gold-tint); color: #6B5320; }
+
+  .row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .row + .row { margin-top: 8px; }
+
+  details { margin: 12px 0 0; border-top: 1px solid var(--line); padding-top: 4px; }
+  summary { min-height: var(--touch); display: flex; align-items: center; cursor: pointer; font-weight: 700; color: var(--muted); }
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 8px 0 12px; font-size: 15px; }
+  dt { color: var(--muted); }
+  dd { margin: 0; overflow-wrap: anywhere; }
+  .field { display: block; margin-bottom: 12px; }
+  .field > span { display: block; font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .field small { font-weight: 400; color: var(--muted); }
+  .check { display: flex; align-items: center; gap: 10px; min-height: var(--touch); font-weight: 500; cursor: pointer; }
+  .check input { width: 20px; height: 20px; accent-color: var(--rose-dark); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+
+  .empty { padding: 32px 16px; text-align: center; color: var(--muted); background: var(--cream-dark); border-radius: var(--radius-card); }
+  .foot { margin-top: 32px; color: var(--muted); font-size: 14px; }
+
+  .panel-card { padding: 18px; margin-bottom: 16px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); }
+  .panel-card h3 { margin: 0 0 4px; font-size: 24px; }
+  .panel-card > p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+  .hours-row { display: grid; grid-template-columns: 110px auto 1fr 1fr; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .hours-row .check { min-height: 0; }
+  .closure { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+
+  .day-load { display: flex; flex-wrap: wrap; gap: 6px; margin: -4px 0 12px; }
+  .day-load:empty { display: none; }
+  .slot-btn { min-height: 36px; padding: 0 10px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--white); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+  .slot-btn:hover { border-color: var(--ink); }
+  .slot-btn[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+  .slot-btn[data-level="full"] { border-color: var(--error); color: var(--error); }
+
+  dialog { width: min(600px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); border: 0; border-radius: var(--radius-card); padding: 20px; background: var(--cream); box-shadow: 0 18px 48px rgb(28 27 25 / 0.18), 0 4px 12px rgb(200 71 106 / 0.08); }
+  dialog::backdrop { background: rgb(28 27 25 / 0.55); }
+  dialog h2 { margin: 0 0 12px; font-size: 28px; }
+  dialog h2:focus { outline: none; }
+  dialog p { margin: 0 0 12px; }
+  .dialog-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+  .dialog-error { padding: 10px 12px; border-radius: var(--radius); background: var(--error-tint); color: var(--error); font-weight: 700; }
+
+  @media (max-width: 560px) {
+    .tabs { flex-wrap: wrap; border-radius: var(--radius-card); }
+    .tab { flex: 1 0 30%; padding: 0 10px; }
+    .stats { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .stat { padding: 10px; }
+    .stat b { font-size: 26px; }
+    .grid2 { grid-template-columns: 1fr; }
+    .hours-row { grid-template-columns: auto 1fr 1fr; }
+    .hours-row > :first-child { grid-column: 1 / -1; font-weight: 700; }
+    #refresh { display: none; }
+    .bar-title { display: none; }
+    .bar-logo { margin-right: auto; }
+  }
+</style>
+
+  <style>
+    #signin { width: min(420px, calc(100vw - 32px)); padding: 0; overflow: hidden; border: 1px solid rgb(250 246 241 / 0.12); }
+    #signin::backdrop { background: var(--ink); }
+    .signin-top { padding: 22px; text-align: center; background: var(--ink); border-bottom: 3px solid var(--rose-dark); }
+    .signin-top img { display: inline-block; height: 26px; width: auto; }
+    .signin-body { padding: 24px; }
+    .signin-eyebrow { margin: 0 0 4px; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose-dark); }
+    #signin h1 { margin: 0 0 8px; font-family: var(--serif); font-size: 36px; line-height: 1.1; letter-spacing: -0.02em; }
+    #signin h1:focus { outline: none; }
+    #signin-intro { color: var(--muted); }
+    .signin-go { width: 100%; margin-top: 4px; }
+    .foot--session { margin-top: 4px; }
+    .link-btn { padding: 0; border: 0; background: none; font: inherit; color: var(--rose-dark); text-decoration: underline; cursor: pointer; min-height: var(--touch); }
+  </style>
+  <script type="module" crossorigin src="/assets/admin-DeGreUPY.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/config-BTXe68zI.js">
+</head>
+<body>
+  <dialog id="signin" aria-labelledby="signin-title">
+    <div class="signin-top"><img src="/brand-assets/logo.webp" alt="Ooh La La" width="150" height="26"></div>
+    <form id="signin-form" class="signin-body" novalidate>
+      <p class="signin-eyebrow">Staff only</p>
+      <h1 id="signin-title" tabindex="-1">Bookings</h1>
+      <p id="signin-intro">Enter the staff passcode. This device then stays signed in for 90 days.</p>
+      <!-- Lets password managers save the passcode under a name. -->
+      <input type="text" autocomplete="username" value="Ooh La La staff" hidden aria-hidden="true" tabindex="-1">
+      <label class="field"><span>Passcode</span>
+        <input class="input" id="passcode" type="password" autocomplete="current-password" autocapitalize="off" spellcheck="false" required>
+      </label>
+      <p class="dialog-error" id="signin-error" role="alert" hidden></p>
+      <button type="submit" class="btn btn--primary signin-go" id="signin-go">Sign in</button>
+    </form>
+  </dialog>
+  
+  <header class="bar">
+    <img class="bar-logo" src="/brand-assets/logo.webp" alt="Ooh La La" width="120" height="21">
+    <span class="bar-title">Bookings</span>
+    <button type="button" class="btn btn--primary" id="new-booking">+ New booking</button>
+    <button type="button" class="btn btn--on-dark" id="refresh" aria-label="Refresh">Refresh</button>
+  </header>
+
+  <main>
+    <div id="paused-banner" class="banner" hidden>
+      <p><strong>Online booking is paused.</strong> <span id="paused-text"></span></p>
+      <button type="button" class="btn btn--primary" id="resume">Resume online booking</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="tabs" role="tablist" aria-label="Which bookings">
+        <button type="button" class="tab" role="tab" id="tab-today" data-tab="today" aria-selected="true" aria-controls="panel">Today</button>
+        <button type="button" class="tab" role="tab" id="tab-upcoming" data-tab="upcoming" aria-selected="false" aria-controls="panel">Upcoming</button>
+        <button type="button" class="tab" role="tab" id="tab-past" data-tab="past" aria-selected="false" aria-controls="panel">Past</button>
+        <button type="button" class="tab" role="tab" id="tab-cancelled" data-tab="cancelled" aria-selected="false" aria-controls="panel">Cancelled</button>
+        <button type="button" class="tab" role="tab" id="tab-settings" data-tab="settings" aria-selected="false" aria-controls="panel">Settings</button>
+      </div>
+      <div id="search-wrap">
+        <label class="sr-only" for="search">Search bookings</label>
+        <input class="input" id="search" type="search" placeholder="Search name, email, phone or reference" autocomplete="off">
+      </div>
+    </div>
+
+    <p class="status" id="status" role="status" aria-live="polite">Loading bookings…</p>
+    <section id="panel" role="tabpanel" aria-labelledby="tab-today"></section>
+
+    <p class="foot">
+      <a id="calendar-link" href="https://calendar.google.com/" target="_blank" rel="noopener">Open the bookings calendar</a> ·
+      <a id="sheet-link" href="#" target="_blank" rel="noopener">Open the bookings Sheet</a> ·
+      <a id="site-link" href="https://www.oohlalabrasserie.com/book" target="_blank" rel="noopener">See the booking page</a>
+    </p>
+  </main>
+
+  <!-- New / edit booking -->
+  <dialog id="dlg-booking" aria-labelledby="dlg-booking-title">
+    <form id="booking-form" novalidate>
+      <h2 id="dlg-booking-title" tabindex="-1">New booking</h2>
+      <div class="grid2">
+        <label class="field"><span>Date</span><input class="input" type="date" name="date" required></label>
+        <label class="field"><span>Time</span><input class="input" type="time" name="time" step="300" required></label>
+      </div>
+      <div id="day-load" class="day-load" aria-live="polite"></div>
+      <div class="grid2">
+        <label class="field"><span>Guests</span><input class="input" type="number" name="party" min="1" max="60" inputmode="numeric" required></label>
+        <label class="field"><span>High chairs</span>
+          <select class="input" name="highChairs"><option value="0">None</option><option>1</option><option>2</option><option>3</option></select>
+        </label>
+      </div>
+      <label class="field"><span>Name</span><input class="input" type="text" name="name" autocomplete="off" required></label>
+      <div class="grid2">
+        <label class="field"><span>Phone</span><input class="input" type="tel" name="phone" autocomplete="off"></label>
+        <label class="field"><span>Email <small>(for the confirmation)</small></span><input class="input" type="email" name="email" autocomplete="off"></label>
+      </div>
+      <label class="field"><span>Occasion</span>
+        <select class="input" name="occasion"><option value="">None</option></select>
+      </label>
+      <label class="field"><span>Requests / allergies</span><textarea class="input" name="notes" rows="3" maxlength="500"></textarea></label>
+      <label class="check"><input type="checkbox" name="accessibility"> Needs an accessible table</label>
+      <label class="check" id="notify-wrap"><input type="checkbox" name="notify" checked> <span id="notify-label">Email the guest a confirmation</span></label>
+      <p class="dialog-error" id="booking-error" role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn" data-close>Back</button>
+        <button type="button" class="btn btn--danger" id="booking-override" hidden>Book it anyway</button>
+        <button type="submit" class="btn btn--primary" id="booking-save">Save booking</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Cancel -->
+  <dialog id="dlg-cancel" aria-labelledby="dlg-cancel-title">
+    <h2 id="dlg-cancel-title" tabindex="-1">Cancel this booking?</h2>
+    <p id="dlg-cancel-text"></p>
+    <label class="check" id="cancel-notify-wrap"><input type="checkbox" id="cancel-notify" checked> Email the guest to say it's cancelled</label>
+    <p class="dialog-error" id="cancel-error" role="alert" hidden></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn" data-close>Keep it</button>
+      <button type="button" class="btn btn--danger" id="dlg-cancel-go">Cancel booking</button>
+    </div>
+  </dialog>
+
+  
+
+</body>
+</html>

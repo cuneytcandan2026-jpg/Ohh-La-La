@@ -1,0 +1,15 @@
+# The staff dashboard (/admin/): never indexed, framed or cached, and no
+# Referer leaves it. The page's own Content-Security-Policy is a <meta> tag
+# added at build time (vite.config.ts).
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+</IfModule>
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+  Header set X-Frame-Options "DENY"
+  Header set Referrer-Policy "no-referrer"
+  Header set X-Content-Type-Options "nosniff"
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-store"
+  </FilesMatch>
+</IfModule>
