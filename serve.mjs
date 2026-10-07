@@ -7,6 +7,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = 3000;
 const DIST = __dirname;
 const BASE = '';
+// Loopback only: on shared Wi-Fi anyone on the network could otherwise read
+// the project files. For phone testing over the LAN: HOST=0.0.0.0 node serve.mjs
+const HOST = process.env.HOST || '127.0.0.1';
 
 const mime = {
   '.html': 'text/html',
@@ -30,7 +33,14 @@ const mime = {
 };
 
 http.createServer((req, res) => {
-  let urlPath = decodeURIComponent(req.url.split('?')[0]);
+  let urlPath;
+  try {
+    urlPath = decodeURIComponent(req.url.split('?')[0]);
+  } catch {
+    res.writeHead(400);
+    res.end('400 Bad Request');
+    return;
+  }
 
   // Strip the base prefix
   if (urlPath.startsWith(BASE)) {
@@ -39,6 +49,12 @@ http.createServer((req, res) => {
 
   // Resolve file path within dist
   let filePath = path.join(DIST, urlPath === '/' ? 'index.html' : urlPath);
+  // path.join resolves "..", so never serve anything outside dist.
+  if (!filePath.startsWith(DIST + path.sep)) {
+    res.writeHead(403);
+    res.end('403 Forbidden');
+    return;
+  }
   const ext = path.extname(filePath).toLowerCase();
 
   function serveFile(fp) {
@@ -63,4 +79,4 @@ http.createServer((req, res) => {
       serveFile(path.join(DIST, 'index.html'));
     }
   });
-}).listen(PORT, () => console.log(`Server running at http://localhost:${PORT}${BASE}/`));
+}).listen(PORT, HOST, () => console.log(`Server running at http://localhost:${PORT}${BASE}/`));
