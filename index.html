@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>window.__ollHalloweenHero = (function () { var now = Date.now(); return location.pathname === '/' && now >= 1792972800000 && now < 1793577600000 ? {"wideMedia":"(min-aspect-ratio: 1/1)","wide":"/seasonal/halloween/hero-wide-1280.webp 1280w, /seasonal/halloween/hero-wide-1920.webp 1920w, /seasonal/halloween/hero-wide-2560.webp 2560w","tall":"/seasonal/halloween/hero-tall-640.webp 640w, /seasonal/halloween/hero-tall-960.webp 960w, /seasonal/halloween/hero-tall-1280.webp 1280w, /seasonal/halloween/hero-tall-1440.webp 1440w","sources":"<source media=\"(min-aspect-ratio: 1/1)\" type=\"image/webp\" srcset=\"/seasonal/halloween/hero-wide-1280.webp 1280w, /seasonal/halloween/hero-wide-1920.webp 1920w, /seasonal/halloween/hero-wide-2560.webp 2560w\" sizes=\"100vw\"><source type=\"image/webp\" srcset=\"/seasonal/halloween/hero-tall-640.webp 640w, /seasonal/halloween/hero-tall-960.webp 960w, /seasonal/halloween/hero-tall-1280.webp 1280w, /seasonal/halloween/hero-tall-1440.webp 1440w\" sizes=\"100vw\">"} : null; })();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Preload the home hero image so it downloads in parallel with the JS bundle (it is the LCP element) -->
     <script>
@@ -14,6 +15,14 @@
         hp.setAttribute('imagesrcset', '/brand-assets/hero-640.webp 640w, /brand-assets/hero-960.webp 960w, /brand-assets/hero-1280.webp 1280w, /brand-assets/hero-1920.webp 1920w');
         hp.setAttribute('imagesizes', '100vw');
         hp.setAttribute('fetchpriority', 'high');
+        /* HALLOWEEN 2026 — START (remove after 1 Nov) */
+        var hw = window.__ollHalloweenHero;
+        if (hw) {
+          var hwSet = matchMedia(hw.wideMedia).matches ? hw.wide : hw.tall;
+          hp.href = hwSet.split(' ')[0];
+          hp.setAttribute('imagesrcset', hwSet);
+        }
+        /* HALLOWEEN 2026 — END */
         document.head.appendChild(hp);
       }
     </script>
@@ -209,7 +218,7 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/main-BxYqdzKf.js"></script>
+    <script type="module" crossorigin src="/assets/main-CPwDFJHP.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/react-GZhdek4G.js">
     <link rel="modulepreload" crossorigin href="/assets/config-BTXe68zI.js">
     <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-BnvnyDTF.js">
@@ -227,6 +236,9 @@
         document.currentScript.insertAdjacentHTML('afterend',
           '<section class="grain relative h-[80vh] md:h-dvh min-h-[500px] md:min-h-[600px] flex items-end overflow-hidden bg-charcoal" aria-hidden="true">' +
             '<div class="absolute inset-0 w-full h-full"><picture class="hero-kb">' +
+              /* HALLOWEEN 2026 — START (remove after 1 Nov) */
+              (window.__ollHalloweenHero ? window.__ollHalloweenHero.sources : '') +
+              /* HALLOWEEN 2026 — END */
               '<source type="image/webp" srcset="/brand-assets/hero-640.webp 640w, /brand-assets/hero-960.webp 960w, /brand-assets/hero-1280.webp 1280w, /brand-assets/hero-1920.webp 1920w" sizes="100vw">' +
               '<img src="/brand-assets/hero.jpg" alt="" fetchpriority="high" width="2000" height="2000" class="w-full h-full object-cover object-[center_40%] md:object-center">' +
             '</picture></div>' +
