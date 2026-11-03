@@ -175,6 +175,104 @@
   .ly-event-side b { color: var(--ink); font-size: 14px; }
   .member-card .day:first-child { margin-top: 0; }
   @media (prefers-reduced-motion: reduce) { .member-row { transition: none; } .member-row:active { transform: none; } }
+  /* Coffee card sections */
+  body[data-tab="loyalty"] main { max-width: 1080px; }
+  .ly-nav, .ly-period { display: flex; gap: 4px; padding: 4px; margin: 0 0 16px; background: var(--white); border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-sm); overflow-x: auto; }
+  .ly-period { margin: 0; flex-shrink: 0; }
+  .ly-nav-btn { flex: 1 0 auto; min-height: var(--touch); padding: 0 16px; border: 0; border-radius: 999px; background: transparent; font: inherit; font-weight: 700; font-size: 15px; color: var(--muted); cursor: pointer; white-space: nowrap; transition: transform var(--dur) var(--ease); }
+  .ly-nav-btn:hover { color: var(--ink); background: var(--cream); }
+  .ly-nav-btn:active { transform: scale(0.97); }
+  .ly-nav-btn[aria-pressed="true"] { background: var(--ink); color: var(--cream); }
+  .ly-grid { display: grid; gap: 16px; align-items: start; }
+  .ly-grid > .panel-card, .ly-col > :last-child { margin-bottom: 0; }
+  .ly-col { min-width: 0; }
+  .ly-scan { width: 100%; min-height: 56px; margin-bottom: 10px; font-size: 17px; }
+  .stat-note { display: block; color: var(--muted); font-size: 12px; }
+  .ly-feed { margin-top: 4px; }
+  .ly-feed-day { margin: 14px 0 2px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .ly-feed-day:first-child { margin-top: 0; }
+  .ly-event--btn { width: calc(100% + 16px); margin: 0 -8px; padding: 10px 8px; border: 0; border-top: 1px solid var(--line); border-radius: var(--radius); background: transparent; font: inherit; color: inherit; text-align: left; cursor: pointer; transition: transform var(--dur) var(--ease); }
+  .ly-feed-day + li .ly-event { border-top-color: transparent; }
+  .ly-event--btn:hover { background: var(--cream); }
+  .ly-event--btn:active { transform: scale(0.99); }
+  .ly-dot--fix { background: var(--white); border: 2px solid var(--rose-dark); }
+
+  .ly-dash-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+  .ly-dash-head p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+  .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .kpi { display: grid; align-content: start; gap: 4px; padding: 16px 18px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); }
+  .kpi-label { color: var(--muted); font-size: 14px; font-weight: 500; }
+  .kpi-value { font-size: 34px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+  .delta { color: var(--muted); font-size: 13px; }
+  .delta--up { color: var(--ok); }
+  .delta--down { color: var(--error); }
+
+  .chart-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 10px; padding: 0; list-style: none; font-size: 13px; color: var(--muted); }
+  .chart-legend li, .chart-tip span { display: inline-flex; align-items: center; gap: 6px; }
+  .chart-legend i, .chart-tip i { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+  .chart { position: relative; padding-left: 34px; border-radius: var(--radius); }
+  .chart:focus-visible { outline-offset: 6px; }
+  .chart-plot { position: relative; height: 180px; }
+  .chart-tick { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid var(--cream-dark); }
+  .chart-tick i { position: absolute; right: calc(100% + 8px); top: -9px; font-style: normal; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .chart-cols { position: absolute; inset: 0; display: flex; align-items: flex-end; }
+  .chart-col { flex: 1 1 0; min-width: 0; height: 100%; display: flex; align-items: flex-end; justify-content: center; padding: 0 1px; }
+  .chart-col[data-on] { background: rgb(28 27 25 / 0.05); border-radius: 4px 4px 0 0; }
+  .chart-stack { display: flex; flex-direction: column-reverse; gap: 2px; width: 100%; max-width: 24px; min-height: 2px; border-radius: 4px 4px 0 0; overflow: hidden; }
+  .chart-seg { display: block; min-height: 1px; flex-basis: 0; }
+  .chart-labels { display: flex; height: 22px; margin-top: 4px; font-size: 12px; color: var(--muted); }
+  .chart-labels span { flex: 1 1 0; min-width: 0; position: relative; }
+  .chart-labels i { position: absolute; left: 50%; top: 2px; transform: translateX(-50%); font-style: normal; white-space: nowrap; }
+  .chart-labels span:last-child i { left: auto; right: 0; transform: none; }
+  .chart-tip { position: absolute; left: 0; top: -8px; z-index: 2; display: grid; gap: 2px; min-width: 120px; padding: 8px 10px; border-radius: var(--radius); background: var(--ink); color: var(--cream); font-size: 13px; pointer-events: none; box-shadow: var(--shadow); white-space: nowrap; }
+  .chart-tip strong { font-weight: 700; }
+  .chart-table { margin-top: 8px; border-top: 0; padding-top: 0; }
+  .chart-table summary { font-size: 14px; }
+  .table-wrap { overflow-x: auto; max-height: 280px; }
+  .chart-table table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .chart-table th, .chart-table td { padding: 6px 10px; border-bottom: 1px solid var(--line); text-align: right; }
+  .chart-table th:first-child { text-align: left; font-weight: 500; }
+  .chart-table thead th { position: sticky; top: 0; background: var(--white); color: var(--muted); font-weight: 700; }
+  .ly-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: var(--cream-dark); font-weight: 700; font-size: 14px; }
+  .ly-top .member-row { justify-content: flex-start; }
+  .ly-top .member-row-main { flex: 1; }
+
+  .ly-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 6px; }
+  .ly-filter { min-height: var(--touch); padding: 0 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--white); font: inherit; font-weight: 700; font-size: 14px; color: var(--ink); cursor: pointer; transition: transform var(--dur) var(--ease); }
+  .ly-filter span { margin-left: 4px; color: var(--muted); font-weight: 500; }
+  .ly-filter:hover { border-color: var(--ink); }
+  .ly-filter:active { transform: scale(0.97); }
+  .ly-filter[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+  .ly-filter[aria-pressed="true"] span { color: var(--gold); }
+  .ly-sort { display: flex; align-items: center; gap: 8px; margin-left: auto; font-size: 14px; font-weight: 700; color: var(--muted); }
+  .ly-sort .input { width: auto; min-height: var(--touch); padding: 6px 12px; }
+
+  .tapcards { margin-bottom: 16px; }
+  .tapcard { padding: 18px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); border-top: 1px solid var(--line); }
+  .tapcard-name { margin: 0 auto 0 0; font-family: var(--serif); font-size: 24px; letter-spacing: -0.02em; line-height: 1.1; }
+  .tapcard-meta { margin: 0; color: var(--muted); font-size: 14px; }
+  .tapcard-warn { color: var(--error); }
+  .tapcard-use { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0; }
+  .tapcard-use div { padding: 8px 10px; border-radius: var(--radius); background: var(--cream); }
+  .tapcard-use dt { font-size: 12px; }
+  .tapcard-use dd { font-size: 22px; font-weight: 700; line-height: 1.2; }
+  .ly-setup { padding: 12px 14px; border-radius: var(--radius); background: var(--gold-tint); border-left: 4px solid var(--gold); }
+  .ly-setup ol { margin: 6px 0 10px; padding-left: 20px; display: grid; gap: 4px; }
+
+  .btn--undo { border-color: var(--rose-dark); color: var(--rose-dark); }
+  .btn--undo:hover { background: var(--rose-tint); }
+  .stepper { display: grid; grid-template-columns: var(--control-h) 96px var(--control-h); gap: 8px; }
+  .stepper .btn { padding: 0; font-size: 22px; min-height: var(--control-h); }
+  .stepper .input { text-align: center; font-size: 20px; font-weight: 700; }
+  .reasons { margin: 0 0 8px; padding: 0; border: 0; }
+  .reasons legend { padding: 0; font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+  @media (prefers-reduced-motion: reduce) { .ly-nav-btn, .ly-filter, .ly-event--btn { transition: none; } .ly-nav-btn:active, .ly-filter:active, .ly-event--btn:active { transform: none; } }
+  @media (min-width: 900px) {
+    .ly-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ly-grid--main { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .chart-plot { height: 220px; }
+    .ly-feed { max-height: 760px; overflow-y: auto; margin-right: -8px; padding-right: 8px; }
+  }
   .scan-video { display: block; width: 100%; aspect-ratio: 1; -o-object-fit: cover; object-fit: cover; margin: 0 0 12px; border-radius: var(--radius); background: var(--ink); }
 
   dialog { width: min(600px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); border: 0; border-radius: var(--radius-card); padding: 20px; background: var(--cream); box-shadow: 0 18px 48px rgb(28 27 25 / 0.18), 0 4px 12px rgb(200 71 106 / 0.08); }
@@ -199,6 +297,16 @@
     .bar-logo { margin-right: auto; }
     .ly-facts { grid-template-columns: 1fr; gap: 0; }
     .ly-facts dt { font-size: 13px; margin-top: 8px; }
+    .ly-nav { display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--radius-card); }
+    .ly-nav-btn { border-radius: var(--radius); padding: 0 12px; font-size: 14px; }
+    .ly-dash-head .ly-period { width: 100%; }
+    .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .kpi { padding: 12px 14px; }
+    .kpi-value { font-size: 28px; }
+    .ly-sort { margin-left: 0; width: 100%; }
+    .ly-sort .input { flex: 1; }
+    .chart { padding-left: 28px; }
+    .chart-labels { font-size: 11px; }
   }
 </style>
 
@@ -216,7 +324,7 @@
     .foot--session { margin-top: 4px; }
     .link-btn { padding: 0; border: 0; background: none; font: inherit; color: var(--rose-dark); text-decoration: underline; cursor: pointer; min-height: var(--touch); }
   </style>
-  <script type="module" crossorigin src="/assets/admin-oSvDIrS6.js"></script>
+  <script type="module" crossorigin src="/assets/admin-DFnVnr16.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/config-BLoPsHk7.js">
 </head>
 <body>
@@ -318,6 +426,52 @@
     <div class="dialog-actions">
       <button type="button" class="btn" data-close>Keep it</button>
       <button type="button" class="btn btn--danger" id="dlg-cancel-go">Cancel booking</button>
+    </div>
+  </dialog>
+
+  <!-- Coffee card: correct beans -->
+  <dialog id="dlg-ly-adjust" aria-labelledby="dlg-ly-adjust-title">
+    <form id="ly-adjust-form" novalidate>
+      <h2 id="dlg-ly-adjust-title" tabindex="-1">Correct beans</h2>
+      <p id="ly-adjust-text"></p>
+      <div class="field"><span id="ly-adjust-beans-label">Beans on the card</span>
+        <div class="stepper">
+          <button type="button" class="btn" data-step="-1" aria-label="One bean fewer">−</button>
+          <input class="input" type="number" name="beans" min="0" max="8" inputmode="numeric" aria-labelledby="ly-adjust-beans-label" required>
+          <button type="button" class="btn" data-step="1" aria-label="One bean more">+</button>
+        </div>
+      </div>
+      <fieldset class="field reasons"><legend>Why?</legend><div id="ly-adjust-reasons"></div></fieldset>
+      <label class="field" id="ly-adjust-other" hidden><span>Say why</span><input class="input" name="otherReason" maxlength="100" autocomplete="off"></label>
+      <p class="dialog-error" id="ly-adjust-error" role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn" data-close>Back</button>
+        <button type="submit" class="btn btn--primary" id="ly-adjust-save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Coffee card: rename a tap card -->
+  <dialog id="dlg-ly-rename" aria-labelledby="dlg-ly-rename-title">
+    <form id="ly-rename-form" novalidate>
+      <h2 id="dlg-ly-rename-title">Rename tap card</h2>
+      <label class="field"><span>Name <small>(where it lives, e.g. Till 1)</small></span><input class="input" name="label" maxlength="40" autocomplete="off" required></label>
+      <p class="dialog-error" id="ly-rename-error" role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn" data-close>Back</button>
+        <button type="submit" class="btn btn--primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Coffee card: delete a tap card -->
+  <dialog id="dlg-ly-delete" aria-labelledby="dlg-ly-delete-title">
+    <h2 id="dlg-ly-delete-title" tabindex="-1">Delete this tap card?</h2>
+    <p>Taps on it stop counting straight away, and it leaves the list. Customers’ history keeps its name. To use the card again later, add a new one and write the new link onto it.</p>
+    <p class="dialog-error" id="ly-delete-error" role="alert" hidden></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn" data-close>Keep it</button>
+      <button type="button" class="btn btn--danger" id="ly-delete-go">Delete card</button>
     </div>
   </dialog>
 
