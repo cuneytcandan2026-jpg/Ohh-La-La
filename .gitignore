@@ -4,3 +4,6 @@ temporary screenshots/
 !favicon.png
 ohh-la-la-temp/
 !brand-assets/email/*.png
+
+# Claude Code personal settings
+.claude/settings.local.json
