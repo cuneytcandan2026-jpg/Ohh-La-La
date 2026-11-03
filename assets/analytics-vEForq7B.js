@@ -1,0 +1,1 @@
+function e(){try{return localStorage.getItem(`cookie-consent`)===`granted`}catch{return!1}}function t(t,n={}){let r=window.gtag;typeof r==`function`&&e()&&r(`event`,t,n)}export{t};
