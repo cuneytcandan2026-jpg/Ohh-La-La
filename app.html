@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>window.__ollHalloweenHero = (function () { var now = Date.now(); return location.pathname === '/' && now >= 1792972800000 && now < 1793577600000 ? {"wideMedia":"(min-aspect-ratio: 1/1)","wide":"/seasonal/halloween/hero-wide-1280.webp 1280w, /seasonal/halloween/hero-wide-1920.webp 1920w, /seasonal/halloween/hero-wide-2560.webp 2560w","tall":"/seasonal/halloween/hero-tall-640.webp 640w, /seasonal/halloween/hero-tall-960.webp 960w, /seasonal/halloween/hero-tall-1280.webp 1280w, /seasonal/halloween/hero-tall-1440.webp 1440w","sources":"<source media=\"(min-aspect-ratio: 1/1)\" type=\"image/webp\" srcset=\"/seasonal/halloween/hero-wide-1280.webp 1280w, /seasonal/halloween/hero-wide-1920.webp 1920w, /seasonal/halloween/hero-wide-2560.webp 2560w\" sizes=\"100vw\"><source type=\"image/webp\" srcset=\"/seasonal/halloween/hero-tall-640.webp 640w, /seasonal/halloween/hero-tall-960.webp 960w, /seasonal/halloween/hero-tall-1280.webp 1280w, /seasonal/halloween/hero-tall-1440.webp 1440w\" sizes=\"100vw\">"} : null; })();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Preload the home hero image so it downloads in parallel with the JS bundle (it is the LCP element) -->
+    <script>
+      if (location.pathname === '/') {
+        var hp = document.createElement('link');
+        hp.rel = 'preload';
+        hp.as = 'image';
+        hp.type = 'image/webp';
+        hp.href = '/brand-assets/hero-1280.webp';
+        hp.setAttribute('imagesrcset', '/brand-assets/hero-640.webp 640w, /brand-assets/hero-960.webp 960w, /brand-assets/hero-1280.webp 1280w, /brand-assets/hero-1920.webp 1920w');
+        hp.setAttribute('imagesizes', '100vw');
+        hp.setAttribute('fetchpriority', 'high');
+        /* HALLOWEEN 2026 — START (remove after 1 Nov) */
+        var hw = window.__ollHalloweenHero;
+        if (hw) {
+          var hwSet = matchMedia(hw.wideMedia).matches ? hw.wide : hw.tall;
+          hp.href = hwSet.split(' ')[0];
+          hp.setAttribute('imagesrcset', hwSet);
+        }
+        /* HALLOWEEN 2026 — END */
+        document.head.appendChild(hp);
+      }
+    </script>
+    <!-- Google Tag Manager — deferred until after page load so it doesn't compete with first paint -->
+    <script>
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PDR9GMC4');
+        }, 1500);
+      });
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) — only loaded after cookie consent is granted, see banner script below -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.loadAnalytics = function () {
+        if (window.__gaLoaded) return;
+        window.__gaLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0YLY6DFE9N';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-0YLY6DFE9N');
+      };
+      if (localStorage.getItem('cookie-consent') === 'granted') {
+        window.loadAnalytics();
+      }
+    </script>
+    <style>
+      .cc-banner {
+        position: fixed;
+        inset: auto 0 0 0;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        padding: 16px;
+        pointer-events: none;
+        animation: cc-slide-up .4s cubic-bezier(.16,1,.3,1);
+      }
+      .cc-banner[hidden] { display: none; }
+      .cc-banner__card {
+        pointer-events: auto;
+        width: 100%;
+        max-width: 640px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: #2E2C29;
+        border: 1px solid #453E33;
+        border-radius: 1rem;
+        padding: 18px 22px;
+        box-shadow: 0 2px 8px #1c1b191f, 0 8px 24px #1c1b191a, 0 24px 64px #1c1b1933;
+        font-family: 'DM Sans', system-ui, sans-serif;
+      }
+      .cc-banner__text {
+        margin: 0;
+        font-size: .9375rem;
+        line-height: 1.6;
+        color: #FAF6F1;
+        flex: 1;
+      }
+      .cc-banner__actions {
+        display: flex;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+      .cc-btn {
+        font-family: inherit;
+        font-size: .875rem;
+        font-weight: 500;
+        padding: 10px 18px;
+        min-height: 44px;
+        border-radius: 9999px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: transform .2s cubic-bezier(.16,1,.3,1), background-color .2s, border-color .2s, color .2s;
+      }
+      .cc-btn--ghost {
+        background: transparent;
+        border-color: #453E33;
+        color: #AAA6A1;
+      }
+      .cc-btn--ghost:hover { color: #FAF6F1; border-color: #7E7973; }
+      .cc-btn--ghost:active { transform: scale(.97); }
+      .cc-btn--solid {
+        background: #C8476A;
+        color: #FAF6F1;
+        box-shadow: 0 2px 8px #c8476a1f, 0 8px 24px #c8476a14;
+      }
+      .cc-btn--solid:hover { background: #E788B0; transform: translateY(-1px); }
+      .cc-btn--solid:active { transform: translateY(0) scale(.97); }
+      .cc-btn:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px #1C1B19, 0 0 0 4px #C8476A;
+      }
+      @keyframes cc-slide-up {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @media (max-width: 480px) {
+        .cc-banner__card { flex-direction: column; align-items: stretch; text-align: center; }
+        .cc-banner__actions { justify-content: center; }
+      }
+    </style>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <title>Ooh La La Brasserie | Breakfast, Brunch &amp; Lunch in Enfield</title>
+    <meta name="description" content="A new brasserie concept in Enfield, North London. Specialist coffee, soufflé pancakes, Mediterranean-inspired brunch. 238 Hertford Road EN3 5BL." />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="N5-0Quh8xyOEiW30_PkUj74dSdH-LJH5FGXOwpr4NPg" />
+    <link rel="canonical" href="https://www.oohlalabrasserie.com/" />
+    <meta property="og:title" content="Ooh La La Brasserie" />
+    <meta property="og:description" content="Breakfast · Brunch · Lunch · Coffee · Cocktails in Enfield, North London" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.oohlalabrasserie.com/brand-assets/menu-1.jpg" />
+    <meta property="og:url" content="https://www.oohlalabrasserie.com/" />
+    <meta property="og:site_name" content="Ooh La La Brasserie" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ooh La La Brasserie" />
+    <meta name="twitter:description" content="Breakfast · Brunch · Lunch · Coffee · Cocktails in Enfield, North London" />
+    <meta name="twitter:image" content="https://www.oohlalabrasserie.com/brand-assets/menu-1.jpg" />
+    <meta name="theme-color" content="#1C1B19" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Booking API (Google Apps Script): resolve DNS early, the widget fetches availability on demand -->
+    <link rel="dns-prefetch" href="https://script.google.com" />
+    <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
+    <!-- Fonts load without blocking first render (font-display: swap) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <script>
+      // Decode GitHub Pages SPA redirect: restore the real URL from query param
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(
+            null, null,
+            l.pathname.slice(0, -1) + decoded[0] +
+            (decoded[1] ? '?' + decoded[1] : '') +
+            l.hash
+          );
+        }
+      }(window.location));
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Restaurant", "CafeOrCoffeeShop"],
+      "@id": "https://www.oohlalabrasserie.com/#business",
+      "name": "Ooh La La Brasserie",
+      "alternateName": ["Ooh La La", "Ooh La La Enfield", "Ohh La La Brasserie"],
+      "description": "A Parisian-inspired café and brasserie in Enfield, North London, serving speciality coffee, breakfast, brunch and lunch with Mediterranean flavours, soufflé pancakes, Halal options and afternoon cocktails. Open every day 8am to 5pm.",
+      "url": "https://www.oohlalabrasserie.com/",
+      "menu": "https://www.oohlalabrasserie.com/menu",
+      "hasMenu": "https://www.oohlalabrasserie.com/menu",
+      "telephone": "+442083745097",
+      "email": "info@oohlalabrasserie.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "238 Hertford Road",
+        "addressLocality": "Enfield",
+        "addressRegion": "London",
+        "postalCode": "EN3 5BL",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.658419,
+        "longitude": -0.047599
+      },
+      "areaServed": ["Enfield", "Enfield Highway", "Ponders End", "Enfield Lock", "Edmonton", "Waltham Cross", "North London"],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "servesCuisine": ["Breakfast", "Brunch", "Lunch", "Mediterranean", "Turkish breakfast", "Speciality coffee", "Pancakes", "Cocktails"],
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Halal options", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Vegetarian and vegan options", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Walk-ins welcome", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Private hire", "value": true }
+      ],
+      "priceRange": "£10-£20",
+      "acceptsReservations": "https://www.oohlalabrasserie.com/book",
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.oohlalabrasserie.com/book",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+        },
+        "result": { "@type": "FoodEstablishmentReservation", "name": "Book a table" }
+      },
+      "image": "https://www.oohlalabrasserie.com/brand-assets/menu-1.jpg",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Ooh+La+La+Brasserie+238+Hertford+Road+Enfield+EN3+5BL",
+      "sameAs": [
+        "https://instagram.com/oohlalabrasserie",
+        "https://www.facebook.com/oohlalabrasserie"
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/main-BIfbehC_.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/config-BLoPsHk7.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-BeZVMKfv.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-CKyEQQb-.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-BL_WavAt.css">
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDR9GMC4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root"><script>
+      // Static hero backdrop painted before the JS bundle runs; React replaces it on mount.
+      // Mirrors the markup/classes in src/components/sections/Hero.tsx — keep them in sync.
+      if (location.pathname === '/') {
+        document.currentScript.insertAdjacentHTML('afterend',
+          '<section class="grain relative h-[80vh] md:h-dvh min-h-[500px] md:min-h-[600px] flex items-end overflow-hidden bg-charcoal" aria-hidden="true">' +
+            '<div class="absolute inset-0 w-full h-full"><picture class="hero-kb">' +
+              /* HALLOWEEN 2026 — START (remove after 1 Nov) */
+              (window.__ollHalloweenHero ? window.__ollHalloweenHero.sources : '') +
+              /* HALLOWEEN 2026 — END */
+              '<source type="image/webp" srcset="/brand-assets/hero-640.webp 640w, /brand-assets/hero-960.webp 960w, /brand-assets/hero-1280.webp 1280w, /brand-assets/hero-1920.webp 1920w" sizes="100vw">' +
+              '<img src="/brand-assets/hero.jpg" alt="" fetchpriority="high" width="2000" height="2000" class="w-full h-full object-cover object-[center_40%] md:object-center">' +
+            '</picture></div>' +
+            '<div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/20"></div>' +
+            '<div class="absolute inset-0 bg-gradient-to-r from-charcoal/40 via-transparent to-transparent"></div>' +
+            '<div class="absolute inset-0 bg-rose/8 mix-blend-multiply"></div>' +
+          '</section>');
+      }
+    </script></div>
+
+    <div id="cookie-consent" class="cc-banner" role="region" aria-label="Cookie consent" hidden>
+      <div class="cc-banner__card">
+        <p class="cc-banner__text">
+          We use cookies to understand how visitors use our site. We won't set analytics cookies unless you accept.
+        </p>
+        <div class="cc-banner__actions">
+          <button type="button" class="cc-btn cc-btn--ghost" id="cc-reject">Reject</button>
+          <button type="button" class="cc-btn cc-btn--solid" id="cc-accept">Accept</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var consent = localStorage.getItem('cookie-consent');
+        var banner = document.getElementById('cookie-consent');
+        if (consent !== 'granted' && consent !== 'denied') {
+          banner.hidden = false;
+        }
+        document.getElementById('cc-accept').addEventListener('click', function () {
+          localStorage.setItem('cookie-consent', 'granted');
+          window.loadAnalytics();
+          banner.hidden = true;
+        });
+        document.getElementById('cc-reject').addEventListener('click', function () {
+          localStorage.setItem('cookie-consent', 'denied');
+          banner.hidden = true;
+        });
+      })();
+    </script>
+  </body>
+</html>

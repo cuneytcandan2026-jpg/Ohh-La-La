@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>window.__ollHalloweenHero = (function () { var now = Date.now(); return location.pathname === '/' && now >= 1792972800000 && now < 1793577600000 ? {"wideMedia":"(min-aspect-ratio: 1/1)","wide":"/seasonal/halloween/hero-wide-1280.webp 1280w, /seasonal/halloween/hero-wide-1920.webp 1920w, /seasonal/halloween/hero-wide-2560.webp 2560w","tall":"/seasonal/halloween/hero-tall-640.webp 640w, /seasonal/halloween/hero-tall-960.webp 960w, /seasonal/halloween/hero-tall-1280.webp 1280w, /seasonal/halloween/hero-tall-1440.webp 1440w","sources":"<source media=\"(min-aspect-ratio: 1/1)\" type=\"image/webp\" srcset=\"/seasonal/halloween/hero-wide-1280.webp 1280w, /seasonal/halloween/hero-wide-1920.webp 1920w, /seasonal/halloween/hero-wide-2560.webp 2560w\" sizes=\"100vw\"><source type=\"image/webp\" srcset=\"/seasonal/halloween/hero-tall-640.webp 640w, /seasonal/halloween/hero-tall-960.webp 960w, /seasonal/halloween/hero-tall-1280.webp 1280w, /seasonal/halloween/hero-tall-1440.webp 1440w\" sizes=\"100vw\">"} : null; })();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Preload the home hero image so it downloads in parallel with the JS bundle (it is the LCP element) -->
+    <script>
+      if (location.pathname === '/') {
+        var hp = document.createElement('link');
+        hp.rel = 'preload';
+        hp.as = 'image';
+        hp.type = 'image/webp';
+        hp.href = '/brand-assets/hero-1280.webp';
+        hp.setAttribute('imagesrcset', '/brand-assets/hero-640.webp 640w, /brand-assets/hero-960.webp 960w, /brand-assets/hero-1280.webp 1280w, /brand-assets/hero-1920.webp 1920w');
+        hp.setAttribute('imagesizes', '100vw');
+        hp.setAttribute('fetchpriority', 'high');
+        /* HALLOWEEN 2026 — START (remove after 1 Nov) */
+        var hw = window.__ollHalloweenHero;
+        if (hw) {
+          var hwSet = matchMedia(hw.wideMedia).matches ? hw.wide : hw.tall;
+          hp.href = hwSet.split(' ')[0];
+          hp.setAttribute('imagesrcset', hwSet);
+        }
+        /* HALLOWEEN 2026 — END */
+        document.head.appendChild(hp);
+      }
+    </script>
+    <!-- Google Tag Manager — deferred until after page load so it doesn't compete with first paint -->
+    <script>
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PDR9GMC4');
+        }, 1500);
+      });
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) — only loaded after cookie consent is granted, see banner script below -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.loadAnalytics = function () {
+        if (window.__gaLoaded) return;
+        window.__gaLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0YLY6DFE9N';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-0YLY6DFE9N');
+      };
+      if (localStorage.getItem('cookie-consent') === 'granted') {
+        window.loadAnalytics();
+      }
+    </script>
+    <style>
+      .cc-banner {
+        position: fixed;
+        inset: auto 0 0 0;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        padding: 16px;
+        pointer-events: none;
+        animation: cc-slide-up .4s cubic-bezier(.16,1,.3,1);
+      }
+      .cc-banner[hidden] { display: none; }
+      .cc-banner__card {
+        pointer-events: auto;
+        width: 100%;
+        max-width: 640px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: #2E2C29;
+        border: 1px solid #453E33;
+        border-radius: 1rem;
+        padding: 18px 22px;
+        box-shadow: 0 2px 8px #1c1b191f, 0 8px 24px #1c1b191a, 0 24px 64px #1c1b1933;
+        font-family: 'DM Sans', system-ui, sans-serif;
+      }
+      .cc-banner__text {
+        margin: 0;
+        font-size: .9375rem;
+        line-height: 1.6;
+        color: #FAF6F1;
+        flex: 1;
+      }
+      .cc-banner__actions {
+        display: flex;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+      .cc-btn {
+        font-family: inherit;
+        font-size: .875rem;
+        font-weight: 500;
+        padding: 10px 18px;
+        min-height: 44px;
+        border-radius: 9999px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: transform .2s cubic-bezier(.16,1,.3,1), background-color .2s, border-color .2s, color .2s;
+      }
+      .cc-btn--ghost {
+        background: transparent;
+        border-color: #453E33;
+        color: #AAA6A1;
+      }
+      .cc-btn--ghost:hover { color: #FAF6F1; border-color: #7E7973; }
+      .cc-btn--ghost:active { transform: scale(.97); }
+      .cc-btn--solid {
+        background: #C8476A;
+        color: #FAF6F1;
+        box-shadow: 0 2px 8px #c8476a1f, 0 8px 24px #c8476a14;
+      }
+      .cc-btn--solid:hover { background: #E788B0; transform: translateY(-1px); }
+      .cc-btn--solid:active { transform: translateY(0) scale(.97); }
+      .cc-btn:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px #1C1B19, 0 0 0 4px #C8476A;
+      }
+      @keyframes cc-slide-up {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @media (max-width: 480px) {
+        .cc-banner__card { flex-direction: column; align-items: stretch; text-align: center; }
+        .cc-banner__actions { justify-content: center; }
+      }
+    </style>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <title>Book a Table | Ooh La La Brasserie, Enfield</title>
+    <meta name="description" content="Book a table at Ooh La La Brasserie in Enfield for breakfast, brunch or lunch. Pick a time and get instant confirmation by email." />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="N5-0Quh8xyOEiW30_PkUj74dSdH-LJH5FGXOwpr4NPg" />
+    <link rel="canonical" href="https://www.oohlalabrasserie.com/book" />
+    <meta property="og:title" content="Book a Table | Ooh La La Brasserie, Enfield" />
+    <meta property="og:description" content="Book a table at Ooh La La Brasserie in Enfield for breakfast, brunch or lunch. Pick a time and get instant confirmation by email." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.oohlalabrasserie.com/brand-assets/menu-1.jpg" />
+    <meta property="og:url" content="https://www.oohlalabrasserie.com/book" />
+    <meta property="og:site_name" content="Ooh La La Brasserie" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Book a Table | Ooh La La Brasserie, Enfield" />
+    <meta name="twitter:description" content="Book a table at Ooh La La Brasserie in Enfield for breakfast, brunch or lunch. Pick a time and get instant confirmation by email." />
+    <meta name="twitter:image" content="https://www.oohlalabrasserie.com/brand-assets/menu-1.jpg" />
+    <meta name="theme-color" content="#1C1B19" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Booking API (Google Apps Script): resolve DNS early, the widget fetches availability on demand -->
+    <link rel="dns-prefetch" href="https://script.google.com" />
+    <link rel="dns-prefetch" href="https://script.googleusercontent.com" />
+    <!-- Fonts load without blocking first render (font-display: swap) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <script>
+      // Decode GitHub Pages SPA redirect: restore the real URL from query param
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(
+            null, null,
+            l.pathname.slice(0, -1) + decoded[0] +
+            (decoded[1] ? '?' + decoded[1] : '') +
+            l.hash
+          );
+        }
+      }(window.location));
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Restaurant", "CafeOrCoffeeShop"],
+      "@id": "https://www.oohlalabrasserie.com/#business",
+      "name": "Ooh La La Brasserie",
+      "alternateName": ["Ooh La La", "Ooh La La Enfield", "Ohh La La Brasserie"],
+      "description": "A Parisian-inspired café and brasserie in Enfield, North London, serving speciality coffee, breakfast, brunch and lunch with Mediterranean flavours, soufflé pancakes, Halal options and afternoon cocktails. Open every day 8am to 5pm.",
+      "url": "https://www.oohlalabrasserie.com/",
+      "menu": "https://www.oohlalabrasserie.com/menu",
+      "hasMenu": "https://www.oohlalabrasserie.com/menu",
+      "telephone": "+442083745097",
+      "email": "info@oohlalabrasserie.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "238 Hertford Road",
+        "addressLocality": "Enfield",
+        "addressRegion": "London",
+        "postalCode": "EN3 5BL",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.658419,
+        "longitude": -0.047599
+      },
+      "areaServed": ["Enfield", "Enfield Highway", "Ponders End", "Enfield Lock", "Edmonton", "Waltham Cross", "North London"],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "servesCuisine": ["Breakfast", "Brunch", "Lunch", "Mediterranean", "Turkish breakfast", "Speciality coffee", "Pancakes", "Cocktails"],
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Halal options", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Vegetarian and vegan options", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Walk-ins welcome", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Private hire", "value": true }
+      ],
+      "priceRange": "£10-£20",
+      "acceptsReservations": "https://www.oohlalabrasserie.com/book",
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.oohlalabrasserie.com/book",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+        },
+        "result": { "@type": "FoodEstablishmentReservation", "name": "Book a table" }
+      },
+      "image": "https://www.oohlalabrasserie.com/brand-assets/menu-1.jpg",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Ooh+La+La+Brasserie+238+Hertford+Road+Enfield+EN3+5BL",
+      "sameAs": [
+        "https://instagram.com/oohlalabrasserie",
+        "https://www.facebook.com/oohlalabrasserie"
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/main-BIfbehC_.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/config-BLoPsHk7.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-BeZVMKfv.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-CKyEQQb-.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-BL_WavAt.css">
+      <script type="application/ld+json" id="breadcrumb-jsonld">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.oohlalabrasserie.com/"},{"@type":"ListItem","position":2,"name":"Book a Table","item":"https://www.oohlalabrasserie.com/book"}]}</script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDR9GMC4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root"><header id="site-nav" class="fixed top-0 left-0 right-0 z-50 bg-transparent"><nav aria-label="Main navigation" class="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-28 flex items-center justify-between"><a aria-label="Ooh La La Brasserie home" class="flex-shrink-0 focus-visible:ring-2 focus-visible:ring-rose rounded" href="/" data-discover="true"><img alt="Ooh La La Brasserie" width="1500" height="260" class="h-11 w-auto object-contain" src="/brand-assets/logo.webp" style="filter: brightness(0) invert(1) sepia(1) saturate(6) hue-rotate(293deg) brightness(1.15) drop-shadow(rgb(255, 100, 180) 0px 0px 6px) drop-shadow(rgba(255, 100, 180, 0.75) 0px 0px 14px) drop-shadow(rgba(255, 100, 180, 0.45) 0px 0px 30px);"></a><div class="hidden lg:flex"><ul class="relative flex items-center rounded-full border border-white/20 backdrop-blur-sm p-1.5 gap-0 transition-all duration-300 hover:border-white/30" role="list" style="background: rgba(255, 255, 255, 0.06);"><li><a href="#about" class="relative z-10 block cursor-pointer whitespace-nowrap px-3 py-2.5 text-sm xl:px-5 xl:text-base font-medium tracking-wide transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-rose rounded-full text-cream/70 hover:text-cream">About</a></li><li><a href="#menu" class="relative z-10 block cursor-pointer whitespace-nowrap px-3 py-2.5 text-sm xl:px-5 xl:text-base font-medium tracking-wide transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-rose rounded-full text-cream/70 hover:text-cream">Menu</a></li><li><a class="relative z-10 block cursor-pointer whitespace-nowrap px-3 py-2.5 text-sm xl:px-5 xl:text-base font-medium tracking-wide transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-rose rounded-full text-cream/70 hover:text-cream " href="/gallery" data-discover="true">Gallery</a></li><li><a class="relative z-10 block cursor-pointer whitespace-nowrap px-3 py-2.5 text-sm xl:px-5 xl:text-base font-medium tracking-wide transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-rose rounded-full text-cream/70 hover:text-cream " href="/private-hire" data-discover="true">Private Hire</a></li><li><a href="#visit" class="relative z-10 block cursor-pointer whitespace-nowrap px-3 py-2.5 text-sm xl:px-5 xl:text-base font-medium tracking-wide transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-rose rounded-full text-cream/70 hover:text-cream">Contact</a></li><li class="absolute top-1 bottom-1 z-0 rounded-full pointer-events-none" style="background: linear-gradient(135deg, rgba(200, 71, 106, 0.85) 0%, rgba(160, 50, 80, 0.9) 100%); box-shadow: rgba(200, 71, 106, 0.55) 0px 0px 14px, rgba(200, 71, 106, 0.25) 0px 0px 30px; left: 0px; width: 0px; opacity: 0;"></li></ul></div><div class="flex items-center gap-3"><button type="button" class="hidden md:inline-flex items-center justify-center px-6 py-3 rounded-full bg-rose text-cream font-body text-sm font-medium
+                         hover:bg-rose-dark active:scale-95 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal" style="box-shadow: rgba(200, 71, 106, 0.5) 0px 0px 18px, rgba(200, 71, 106, 0.22) 0px 0px 40px, rgba(200, 71, 106, 0.3) 0px 2px 8px;">Book a Table</button><button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation" class="lg:hidden relative w-11 h-11 rounded-full
+                          focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2 focus-visible:ring-offset-transparent
+                          active:scale-90 transition-colors duration-200
+                          bg-charcoal/75 hover:bg-charcoal/90 shadow-[0_2px_12px_rgba(28,27,25,0.45)]" style="backdrop-filter: blur(8px); border: 1px solid rgba(250, 246, 241, 0.12);"><span style="position: absolute; top: 50%; left: 50%; width: 20px; height: 1.5px; background: rgb(250, 246, 241); border-radius: 2px; transform-origin: center center; transition: transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1); transform: translate(-50%, -4px);"></span><span style="position: absolute; top: 50%; left: 50%; width: 20px; height: 1.5px; background: rgb(250, 246, 241); border-radius: 2px; transform-origin: center center; transition: transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1); transform: translate(-50%, 4px);"></span></button></div></nav></header><div aria-hidden="true" class="lg:hidden fixed inset-0 z-[55] transition-opacity duration-500" style="background: rgba(10, 9, 8, 0.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none;"></div><div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" class="lg:hidden fixed top-0 left-0 bottom-0 z-[60] w-[85vw] max-w-[340px] flex flex-col" style="background: linear-gradient(160deg, rgb(28, 27, 25) 0%, rgb(35, 31, 28) 60%, rgb(26, 16, 22) 100%); box-shadow: none; transform: translateX(-105%); transition: transform 0.45s cubic-bezier(0.34, 1.1, 0.64, 1), box-shadow 0.45s; pointer-events: none;"><div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background: radial-gradient(60% 40% at 20% 10%, rgba(200, 71, 106, 0.12) 0%, transparent 70%);"></div><div class="relative flex items-center justify-between px-7 pt-6 pb-5 border-b border-cream/[0.07]"><img alt="Ooh La La Brasserie" width="1500" height="260" class="h-8 w-auto object-contain" src="/brand-assets/logo.webp" style="filter: brightness(0) invert(1) sepia(1) saturate(6) hue-rotate(293deg) brightness(1.15) drop-shadow(rgba(255, 100, 180, 0.9) 0px 0px 6px) drop-shadow(rgba(255, 100, 180, 0.55) 0px 0px 14px);"><button aria-label="Close navigation" class="w-9 h-9 flex items-center justify-center rounded-full border border-cream/10
+                       text-cream/60 hover:text-cream hover:border-cream/30 hover:bg-cream/5
+                       active:scale-90 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-rose"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></button></div><nav aria-label="Mobile navigation" class="relative flex-1 flex flex-col justify-start px-7 gap-0 pt-4 pb-2"><a href="#about" class="group flex items-center gap-4 py-2.5 px-4 rounded-xl min-h-[48px] font-display font-semibold text-[1.55rem] tracking-tightest transition-colors duration-200 hover:bg-cream/[0.06] active:bg-cream/10 text-cream/90 hover:text-cream" style="transition-delay: 0ms; transition-property: opacity, transform; transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: translateX(20px);"><span class="w-1.5 h-1.5 rounded-full bg-rose opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0" aria-hidden="true"></span>About</a><a href="#menu" class="group flex items-center gap-4 py-2.5 px-4 rounded-xl min-h-[48px] font-display font-semibold text-[1.55rem] tracking-tightest transition-colors duration-200 hover:bg-cream/[0.06] active:bg-cream/10 text-cream/90 hover:text-cream" style="transition-delay: 0ms; transition-property: opacity, transform; transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: translateX(20px);"><span class="w-1.5 h-1.5 rounded-full bg-rose opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0" aria-hidden="true"></span>Menu</a><a class="group flex items-center gap-4 py-2.5 px-4 rounded-xl min-h-[48px] font-display font-semibold text-[1.55rem] tracking-tightest transition-colors duration-200 hover:bg-cream/[0.06] active:bg-cream/10 text-cream/90 hover:text-cream" href="/gallery" data-discover="true" style="transition-delay: 0ms; transition-property: opacity, transform; transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: translateX(20px);"><span class="w-1.5 h-1.5 rounded-full bg-rose opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0" aria-hidden="true"></span>Gallery</a><a class="group flex items-center gap-4 py-2.5 px-4 rounded-xl min-h-[48px] font-display font-semibold text-[1.55rem] tracking-tightest transition-colors duration-200 hover:bg-cream/[0.06] active:bg-cream/10 text-cream/90 hover:text-cream" href="/private-hire" data-discover="true" style="transition-delay: 0ms; transition-property: opacity, transform; transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: translateX(20px);"><span class="w-1.5 h-1.5 rounded-full bg-rose opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0" aria-hidden="true"></span>Private Hire</a><a href="#visit" class="group flex items-center gap-4 py-2.5 px-4 rounded-xl min-h-[48px] font-display font-semibold text-[1.55rem] tracking-tightest transition-colors duration-200 hover:bg-cream/[0.06] active:bg-cream/10 text-cream/90 hover:text-cream" style="transition-delay: 0ms; transition-property: opacity, transform; transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: translateX(20px);"><span class="w-1.5 h-1.5 rounded-full bg-rose opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0" aria-hidden="true"></span>Contact</a></nav><div class="relative px-7 pb-8 pt-5 border-t border-cream/[0.07] flex flex-col gap-4" style="transition-delay: 0ms; transition-property: opacity, transform; transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: translateY(12px);"><div class="flex flex-col gap-1.5"><a href="https://maps.google.com/?q=238+Hertford+Road+Enfield+EN3+5BL" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2 font-body text-cream/50 text-xs hover:text-cream/80 transition-colors duration-200 focus-visible:ring-1 focus-visible:ring-rose rounded"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 mt-0.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>238 Hertford Road, Enfield EN3 5BL</span></a><a href="tel:+442083745097" class="flex items-center gap-2 font-body text-cream/50 text-xs hover:text-cream/80 transition-colors duration-200 focus-visible:ring-1 focus-visible:ring-rose rounded"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.44 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>020 8374 5097</a></div><div class="flex items-center gap-2"><a href="https://instagram.com/oohlalabrasserie" target="_blank" rel="noopener noreferrer" aria-label="Ooh La La on Instagram" class="w-9 h-9 flex items-center justify-center rounded-full border border-cream/10
+                         text-cream/50 hover:text-cream hover:border-cream/30 hover:bg-cream/5
+                         active:scale-90 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-rose"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"></circle></svg></a><a href="https://www.facebook.com/oohlalabrasserie" target="_blank" rel="noopener noreferrer" aria-label="Ooh La La on Facebook" class="w-9 h-9 flex items-center justify-center rounded-full border border-cream/10
+                         text-cream/50 hover:text-cream hover:border-cream/30 hover:bg-cream/5
+                         active:scale-90 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-rose"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a></div><button type="button" class="inline-flex items-center justify-center w-full px-6 py-4 rounded-full bg-rose text-cream
+                       font-body font-medium text-sm min-h-[52px] hover:bg-rose-dark active:scale-[0.97]
+                       transition-all duration-200 focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal" style="box-shadow: rgba(200, 71, 106, 0.45) 0px 0px 24px, rgba(200, 71, 106, 0.2) 0px 0px 48px, rgba(200, 71, 106, 0.35) 0px 2px 8px;">Book a Table</button></div></div><main><section class="relative overflow-hidden pt-28 md:pt-40 pb-20 md:pb-32" style="background: rgb(28, 27, 25);"><div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background: radial-gradient(70% 60% at 20% 50%, rgba(200, 71, 106, 0.13) 0%, transparent 60%), radial-gradient(50% 40% at 80% 30%, rgba(201, 169, 110, 0.07) 0%, transparent 55%);"></div><svg class="pointer-events-none absolute inset-0 w-full h-full opacity-[0.035]" aria-hidden="true"><filter id="page-hero-noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#page-hero-noise)"></rect></svg><div class="relative max-w-4xl mx-auto px-6 text-center"><p class="font-display italic text-gold text-xl md:text-2xl mb-4">Reserve your table</p><h1 class="font-display font-bold uppercase text-cream leading-hero tracking-tight mb-6" style="font-size: clamp(2.6rem, 7vw, 5.5rem);">Book a Table</h1><p class="font-body text-cream/70 text-lg leading-body max-w-xl mx-auto">Breakfast, brunch or lunch in Enfield. Pick a time and you’re confirmed straight away by email.</p></div></section><section class="relative pb-16 md:pb-28" style="background: rgb(240, 233, 223);"><div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-6 lg:gap-10 items-start"><div class="relative -mt-12 md:-mt-20 rounded-3xl p-5 sm:p-8 md:p-10" style="background: rgb(250, 246, 241); box-shadow: rgba(28, 27, 25, 0.06) 0px 1px 2px, rgba(200, 71, 106, 0.08) 0px 12px 32px, rgba(28, 27, 25, 0.1) 0px 32px 64px;"><form class="space-y-4"><p class="font-body text-base text-charcoal/80 leading-body">Our online booking diary isn’t answering right now. Send us a request and we’ll confirm by email or phone, or call us on <a href="tel:+442083745097" class="text-rose-dark underline underline-offset-2 hover:no-underline">020 8374 5097</a>.</p><input tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" type="checkbox" name="botcheck"><div class="grid sm:grid-cols-2 gap-4"><div class="sm:col-span-2"><label for="rq-name" class="block font-body text-sm font-medium text-charcoal/80 mb-1.5">Name <span class="text-rose-dark" aria-hidden="true">*</span></label><input id="rq-name" required="" autocomplete="name" class="w-full px-4 py-3 rounded-xl font-body text-base text-charcoal placeholder:text-charcoal/50 bg-white min-h-[48px] scroll-mt-32 border border-charcoal/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark focus-visible:border-transparent aria-[invalid=true]:border-rose-dark transition-shadow duration-200" value="" name="name"></div><div><label for="rq-email" class="block font-body text-sm font-medium text-charcoal/80 mb-1.5">Email <span class="text-rose-dark" aria-hidden="true">*</span></label><input id="rq-email" required="" autocomplete="email" class="w-full px-4 py-3 rounded-xl font-body text-base text-charcoal placeholder:text-charcoal/50 bg-white min-h-[48px] scroll-mt-32 border border-charcoal/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark focus-visible:border-transparent aria-[invalid=true]:border-rose-dark transition-shadow duration-200" type="email" value="" name="email"></div><div><label for="rq-phone" class="block font-body text-sm font-medium text-charcoal/80 mb-1.5">Phone <span class="text-rose-dark" aria-hidden="true">*</span></label><input id="rq-phone" required="" autocomplete="tel" class="w-full px-4 py-3 rounded-xl font-body text-base text-charcoal placeholder:text-charcoal/50 bg-white min-h-[48px] scroll-mt-32 border border-charcoal/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark focus-visible:border-transparent aria-[invalid=true]:border-rose-dark transition-shadow duration-200" type="tel" value="" name="phone"></div><div><label for="rq-date" class="block font-body text-sm font-medium text-charcoal/80 mb-1.5">Date <span class="text-rose-dark" aria-hidden="true">*</span></label><input id="rq-date" required="" min="2026-11-09" max="2027-02-07" class="w-full px-4 py-3 rounded-xl font-body text-base text-charcoal placeholder:text-charcoal/50 bg-white min-h-[48px] scroll-mt-32 border border-charcoal/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark focus-visible:border-transparent aria-[invalid=true]:border-rose-dark transition-shadow duration-200" type="date" value="" name="date"></div><div><label for="rq-time" class="block font-body text-sm font-medium text-charcoal/80 mb-1.5">Time <span class="text-rose-dark" aria-hidden="true">*</span></label><select id="rq-time" name="time" required="" class="w-full px-4 py-3 rounded-xl font-body text-base text-charcoal placeholder:text-charcoal/50 bg-white min-h-[48px] scroll-mt-32 border border-charcoal/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark focus-visible:border-transparent aria-[invalid=true]:border-rose-dark transition-shadow duration-200"><option value="" disabled="">Choose…</option><option value="08:00">8am</option><option value="08:30">8:30am</option><option value="09:00">9am</option><option value="09:30">9:30am</option><option value="10:00">10am</option><option value="10:30">10:30am</option><option value="11:00">11am</option><option value="11:30">11:30am</option><option value="12:00">12pm</option><option value="12:30">12:30pm</option><option value="13:00">1pm</option><option value="13:30">1:30pm</option><option value="14:00">2pm</option><option value="14:30">2:30pm</option><option value="15:00">3pm</option><option value="15:30">3:30pm</option></select></div><div><label for="rq-guests" class="block font-body text-sm font-medium text-charcoal/80 mb-1.5">Guests <span class="text-rose-dark" aria-hidden="true">*</span></label><input id="rq-guests" inputmode="numeric" min="1" max="20" required="" class="w-full px-4 py-3 rounded-xl font-body text-base text-charcoal placeholder:text-charcoal/50 bg-white min-h-[48px] scroll-mt-32 border border-charcoal/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark focus-visible:border-transparent aria-[invalid=true]:border-rose-dark transition-shadow duration-200" type="number" value="2" name="guests"></div><div class="sm:col-span-2"><label for="rq-message" class="block font-body text-sm font-medium text-charcoal/80 mb-1.5">Allergies or requests <span class="font-normal text-charcoal/70">(optional)</span></label><textarea id="rq-message" name="message" rows="3" class="w-full px-4 py-3 rounded-xl font-body text-base text-charcoal placeholder:text-charcoal/50 bg-white min-h-[48px] scroll-mt-32 border border-charcoal/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark focus-visible:border-transparent aria-[invalid=true]:border-rose-dark transition-shadow duration-200 resize-y"></textarea></div></div><button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-body font-medium text-base text-cream min-h-[52px] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:opacity-50 disabled:hover:translate-y-0 disabled:cursor-not-allowed" style="background: linear-gradient(135deg, rgb(184, 61, 96) 0%, rgb(163, 53, 88) 100%); box-shadow: rgba(200, 71, 106, 0.3) 0px 0px 24px, rgba(200, 71, 106, 0.2) 0px 4px 12px;">Send booking request</button></form></div><aside class="space-y-4 lg:pt-10" aria-label="Good to know"><div class="rounded-2xl p-5 md:p-6 border border-charcoal/10" style="background: rgb(250, 246, 241); box-shadow: rgba(28, 27, 25, 0.05) 0px 1px 2px, rgba(200, 71, 106, 0.06) 0px 8px 24px, rgba(28, 27, 25, 0.05) 0px 24px 48px;"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl flex items-center justify-center text-rose-dark bg-rose/10 border border-rose/20" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></span><h2 class="font-display font-bold text-charcoal text-xl">Opening hours</h2></div><div class="font-body text-sm text-charcoal/80 leading-body space-y-2"><p class="flex justify-between gap-4"><span>Monday – Sunday</span><span class="font-medium text-charcoal tabular-nums">8am – 5pm</span></p><p>Last food orders at 4:30pm.</p></div></div><div class="rounded-2xl p-5 md:p-6 border border-charcoal/10" style="background: rgb(250, 246, 241); box-shadow: rgba(28, 27, 25, 0.05) 0px 1px 2px, rgba(200, 71, 106, 0.06) 0px 8px 24px, rgba(28, 27, 25, 0.05) 0px 24px 48px;"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl flex items-center justify-center text-rose-dark bg-rose/10 border border-rose/20" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></span><h2 class="font-display font-bold text-charcoal text-xl">Find us</h2></div><div class="font-body text-sm text-charcoal/80 leading-body space-y-2"><address class="not-italic">238 Hertford Road, Enfield EN3 5BL</address><p class="flex flex-wrap gap-x-4 gap-y-1"><a href="https://maps.google.com/?q=238+Hertford+Road+Enfield+EN3+5BL" target="_blank" rel="noopener noreferrer" class="text-rose-dark font-medium underline underline-offset-2 hover:no-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark">Get directions</a><a href="tel:+442083745097" class="text-rose-dark font-medium underline underline-offset-2 hover:no-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark">020 8374 5097</a></p></div></div><div class="rounded-2xl p-5 md:p-6 border border-charcoal/10" style="background: rgb(250, 246, 241); box-shadow: rgba(28, 27, 25, 0.05) 0px 1px 2px, rgba(200, 71, 106, 0.06) 0px 8px 24px, rgba(28, 27, 25, 0.05) 0px 24px 48px;"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl flex items-center justify-center text-rose-dark bg-rose/10 border border-rose/20" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></span><h2 class="font-display font-bold text-charcoal text-xl">Bigger group?</h2></div><div class="font-body text-sm text-charcoal/80 leading-body space-y-2"><p>For larger tables, call us on <a href="tel:+442083745097" class="text-rose-dark font-medium underline underline-offset-2 hover:no-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark">020 8374 5097</a>. Planning a celebration? Have a look at <a class="text-rose-dark font-medium underline underline-offset-2 hover:no-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark" href="/private-hire" data-discover="true">private hire</a> for up to 60 guests.</p></div></div><div class="rounded-2xl p-5 md:p-6 border border-charcoal/10" style="background: rgb(250, 246, 241); box-shadow: rgba(28, 27, 25, 0.05) 0px 1px 2px, rgba(200, 71, 106, 0.06) 0px 8px 24px, rgba(28, 27, 25, 0.05) 0px 24px 48px;"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl flex items-center justify-center text-rose-dark bg-rose/10 border border-rose/20" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg></span><h2 class="font-display font-bold text-charcoal text-xl">Good to know</h2></div><div class="font-body text-sm text-charcoal/80 leading-body space-y-2"><p>Walk-ins are always welcome. Booking just guarantees your table.</p><p>Need to cancel? Use the link in your confirmation email, or give us a call.</p></div></div></aside></div></section></main><footer class="relative bg-charcoal-light text-cream pb-28 md:pb-0" style="border-top: 1px solid rgba(250, 246, 241, 0.08);"><div class="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-8"><div class="flex flex-row items-center justify-between gap-8 mb-12"><a aria-label="Ooh La La Brasserie home" class="focus-visible:ring-2 focus-visible:ring-rose rounded shrink-0" href="/" data-discover="true"><img alt="Ooh La La Brasserie" loading="lazy" width="1500" height="260" class="h-8 w-auto" src="/brand-assets/logo.webp" style="filter: brightness(0) invert(1) sepia(1) saturate(6) hue-rotate(293deg) brightness(1.15) drop-shadow(rgb(255, 100, 180) 0px 0px 6px) drop-shadow(rgba(255, 100, 180, 0.75) 0px 0px 14px) drop-shadow(rgba(255, 100, 180, 0.45) 0px 0px 30px);"></a><div class="flex items-center gap-3 shrink-0"><a href="https://instagram.com/oohlalabrasserie" target="_blank" rel="noopener noreferrer" aria-label="Follow Ooh La La on Instagram" class="w-10 h-10 rounded-full flex items-center justify-center text-cream/50 hover:text-cream hover:bg-rose/20 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-rose" data-state="closed" style="border: 1px solid rgba(250, 246, 241, 0.12);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"></circle></svg></a><a href="https://www.facebook.com/oohlalabrasserie" target="_blank" rel="noopener noreferrer" aria-label="Follow Ooh La La on Facebook" class="w-10 h-10 rounded-full flex items-center justify-center text-cream/50 hover:text-cream hover:bg-rose/20 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-rose" data-state="closed" style="border: 1px solid rgba(250, 246, 241, 0.12);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a></div></div><div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3 mb-12"><div class="relative"><h2 class="font-display mb-3 text-2xl font-semibold tracking-tight text-cream">Follow Along</h2><p class="mb-6 font-body text-sm text-cream/50" style="line-height: 1.7;">Behind-the-scenes brunch moments, new menu drops, and daily specials.</p><div class="flex items-center gap-4"><a href="https://instagram.com/oohlalabrasserie" target="_blank" rel="noopener noreferrer" aria-label="Follow Ooh La La on Instagram" class="group relative flex h-14 w-14 items-center justify-center rounded-full text-cream/70 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-light active:translate-y-0" data-state="closed" style="background: linear-gradient(135deg, rgba(200, 71, 106, 0.2), rgba(201, 169, 110, 0.1)); border: 1px solid rgba(250, 246, 241, 0.14); box-shadow: rgba(200, 71, 106, 0.18) 0px 6px 20px, rgba(0, 0, 0, 0.35) 0px 1px 2px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"></circle></svg></a><a href="https://www.facebook.com/oohlalabrasserie" target="_blank" rel="noopener noreferrer" aria-label="Follow Ooh La La on Facebook" class="group relative flex h-14 w-14 items-center justify-center rounded-full text-cream/70 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-light active:translate-y-0" data-state="closed" style="background: linear-gradient(135deg, rgba(200, 71, 106, 0.2), rgba(201, 169, 110, 0.1)); border: 1px solid rgba(250, 246, 241, 0.14); box-shadow: rgba(200, 71, 106, 0.18) 0px 6px 20px, rgba(0, 0, 0, 0.35) 0px 1px 2px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a></div><p class="mt-4 font-body text-xs text-cream/40">@oohlalabrasserie</p><div class="absolute -right-4 top-0 h-24 w-24 rounded-full bg-rose/10 blur-2xl pointer-events-none"></div></div><div><h3 class="font-display mb-4 text-lg font-semibold text-cream">Quick Links</h3><nav class="space-y-2 font-body text-sm" aria-label="Quick links"><a href="#about" class="block text-cream/50 transition-colors hover:text-rose focus-visible:ring-2 focus-visible:ring-rose rounded">About</a><a href="#menu" class="block text-cream/50 transition-colors hover:text-rose focus-visible:ring-2 focus-visible:ring-rose rounded">Menu</a><a class="block text-cream/50 transition-colors hover:text-rose focus-visible:ring-2 focus-visible:ring-rose rounded" href="/gallery" data-discover="true">Gallery</a><a href="#visit" class="block text-cream/50 transition-colors hover:text-rose focus-visible:ring-2 focus-visible:ring-rose rounded">Visit</a><a href="#visit" class="block text-cream/50 transition-colors hover:text-rose focus-visible:ring-2 focus-visible:ring-rose rounded">Contact</a><a class="block text-cream/50 transition-colors hover:text-rose focus-visible:ring-2 focus-visible:ring-rose rounded" href="/book" data-discover="true">Book a Table</a><a class="block text-cream/50 transition-colors hover:text-rose focus-visible:ring-2 focus-visible:ring-rose rounded" href="/private-hire" data-discover="true">Private Hire</a></nav></div><div><h3 class="font-display mb-4 text-lg font-semibold text-cream">Find Us</h3><address class="space-y-1.5 font-body text-sm not-italic text-cream/50" style="line-height: 1.7;"><p>238 Hertford Road</p><p>Enfield, EN3 5BL</p><p>North London</p></address><div class="mt-4 font-body text-sm text-cream/50"><p>Monday – Sunday: 8am – 5pm</p></div></div></div><div class="pt-8 flex flex-col md:flex-row justify-between gap-4 font-body text-xs text-cream/30" style="border-top: 1px solid rgba(250, 246, 241, 0.08);"><address class="not-italic">238 Hertford Road, Enfield EN3 5BL</address><div class="flex flex-col md:flex-row md:items-center gap-x-6 gap-y-2"><a class="text-cream/60 underline underline-offset-2 decoration-cream/20 transition-colors duration-200 hover:text-cream hover:decoration-cream/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose rounded" href="/privacy" data-discover="true">Privacy Policy</a><p>© 2026 Ooh La La Brasserie. All rights reserved.</p></div></div><p class="mt-6 text-center font-body text-xs text-cream/30">Designed &amp; built by <a href="https://laaradigital.co.uk/?utm_source=oohlala&amp;utm_medium=referral&amp;utm_campaign=footer_credit" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 decoration-cream/20 transition-colors duration-200 hover:text-cream/60 hover:decoration-cream/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose rounded">Laara Digital</a></p></div></footer><button aria-label="Back to top" style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50; width: 3rem; height: 3rem; border-radius: 50%; background: rgb(200, 71, 106); color: rgb(250, 246, 241); border-width: medium; border-style: none; border-color: currentcolor; border-image: none; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(16px) scale(0.8); transition: opacity 0.35s ease, transform 0.35s var(--ease-spring), background 0.2s ease, box-shadow 0.2s ease; pointer-events: none; box-shadow: rgba(200, 71, 106, 0.55) 0px 0px 18px, rgba(200, 71, 106, 0.2) 0px 0px 40px, rgba(28, 27, 25, 0.35) 0px 4px 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div>
+
+    <div id="cookie-consent" class="cc-banner" role="region" aria-label="Cookie consent" hidden>
+      <div class="cc-banner__card">
+        <p class="cc-banner__text">
+          We use cookies to understand how visitors use our site. We won't set analytics cookies unless you accept.
+        </p>
+        <div class="cc-banner__actions">
+          <button type="button" class="cc-btn cc-btn--ghost" id="cc-reject">Reject</button>
+          <button type="button" class="cc-btn cc-btn--solid" id="cc-accept">Accept</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var consent = localStorage.getItem('cookie-consent');
+        var banner = document.getElementById('cookie-consent');
+        if (consent !== 'granted' && consent !== 'denied') {
+          banner.hidden = false;
+        }
+        document.getElementById('cc-accept').addEventListener('click', function () {
+          localStorage.setItem('cookie-consent', 'granted');
+          window.loadAnalytics();
+          banner.hidden = true;
+        });
+        document.getElementById('cc-reject').addEventListener('click', function () {
+          localStorage.setItem('cookie-consent', 'denied');
+          banner.hidden = true;
+        });
+      })();
+    </script>
+  </body>
+</html>

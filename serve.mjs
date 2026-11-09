@@ -74,9 +74,14 @@ http.createServer((req, res) => {
     if (!err && ext) {
       // File exists with an extension — serve it directly
       serveFile(filePath);
-    } else {
-      // No extension or file missing → SPA fallback to index.html
-      serveFile(path.join(DIST, 'index.html'));
+      return;
     }
+    // Mirror .htaccess: /menu → menu.html (prerendered page), anything else → app.html shell
+    const pagePath = filePath.replace(/[\\/]+$/, '') + '.html';
+    fs.access(pagePath, fs.constants.F_OK, pageErr => {
+      if (!ext && !pageErr) return serveFile(pagePath);
+      const shell = path.join(DIST, 'app.html');
+      fs.access(shell, fs.constants.F_OK, shellErr => serveFile(shellErr ? path.join(DIST, 'index.html') : shell));
+    });
   });
 }).listen(PORT, HOST, () => console.log(`Server running at http://localhost:${PORT}${BASE}/`));

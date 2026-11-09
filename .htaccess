@@ -25,7 +25,14 @@
   RewriteRule ^s/ohlala_menu-3\.pdf$ /ooh-la-la-menu.pdf [R=301,L]
   RewriteRule ^jobs/?$ /menu [R=301,L]
 
+  # Prerendered pages (scripts/prerender.mjs): /menu serves menu.html, so crawlers that
+  # don't run JavaScript (ChatGPT, Claude, Perplexity...) still get the page's real content
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([a-z0-9-]+)/?$ $1.html [L]
+
+  # Every other app route (/booking/manage, /loyalty, unknown URLs) gets the bare app shell.
+  # Not index.html: that holds the prerendered home page, which would duplicate it on every URL.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+  RewriteRule . /app.html [L]
 </IfModule>
