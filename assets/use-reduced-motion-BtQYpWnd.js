@@ -1,0 +1,1 @@
+import{f as e}from"./config-BLoPsHk7.js";import{t}from"./react-CKyEQQb-.js";import{J as n,K as r,q as i}from"./main-DkzxQy3M.js";var a=e(t(),1);function o(){!i.current&&r();let[e]=(0,a.useState)(n.current);return e}export{o as t};
