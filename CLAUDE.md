@@ -1,7 +1,12 @@
 # CLAUDE.md — Frontend Website Rules
 
 ## Always Do First
-- Check `brand_assets/` before writing any frontend code. Use whatever is there — logos, colors, images. No placeholders where real assets exist.
+- Check `brand-assets/` (web-ready) and `_project/source-media/` (originals) before writing any frontend code. Use whatever is there — logos, colors, images. No placeholders where real assets exist.
+
+## Folder Layout
+- Repo root = the live site (deployed to Hostinger as-is). Built from `ohh-la-la-temp/` (React source, separate repo) — copy its `dist/` to the root.
+- `_project/` = internal files, blocked from the web by `.htaccess`: `docs/`, `drafts/`, `scripts/` (one-off Puppeteer scripts), `source-media/` (original photos, video, PDFs, reference shots).
+- `serve.mjs` and `screenshot.mjs` stay at the root.
 
 ## GitHub & Deployment
 - **NEVER push to GitHub unless the user explicitly asks.** Commit changes locally but do not push.
