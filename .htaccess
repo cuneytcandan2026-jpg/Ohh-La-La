@@ -22,7 +22,10 @@
 
   # Internal project files (docs, scripts, source media) live in the repo but are not part of the site
   RewriteRule ^_project/ - [F,L]
-  RewriteRule ^\.github/ - [F,L]
+  # Repo housekeeping that Hostinger deploys alongside the site: dotfiles and dot-folders
+  # (.github, .gitignore, .claude; .well-known stays reachable) and the dev tooling files
+  RewriteRule ^\.(?!well-known/) - [F,L]
+  RewriteRule ^(CLAUDE\.md|package(-lock)?\.json|serve\.mjs|screenshot\.mjs)$ - [F,L]
   RewriteRule ^index\.html$ - [L]
 
   # Redirect stale Squarespace URLs (still linked from Google Business Profile, old search results, socials)
