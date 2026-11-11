@@ -22,6 +22,7 @@
 
   # Internal project files (docs, scripts, source media) live in the repo but are not part of the site
   RewriteRule ^_project/ - [F,L]
+  RewriteRule ^\.github/ - [F,L]
   RewriteRule ^index\.html$ - [L]
 
   # Redirect stale Squarespace URLs (still linked from Google Business Profile, old search results, socials)

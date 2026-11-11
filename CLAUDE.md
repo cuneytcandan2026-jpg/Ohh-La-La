@@ -11,6 +11,7 @@
 ## GitHub & Deployment
 - **NEVER push to GitHub unless the user explicitly asks.** Commit changes locally but do not push.
 - When the user says to push, run `git push origin main` from the repo root (`c:\Users\cuney\OneDrive\Desktop\Claude\Ohh La la`).
+- **IndexNow (Bing and others, not Google):** `.github/workflows/indexnow.yml` runs `_project/scripts/indexnow.mjs` on every push to main that changes a root `.html` file or `sitemap.xml`, and submits the changed sitemap pages once Hostinger serves them. The key file `1aa01c6461bec5f766bc45f6ea8a466e.txt` must stay at the root (its source copy is in `ohh-la-la-temp/public/`). Manual full submit: Actions tab → IndexNow → Run workflow. `INDEXNOW_DRY_RUN=1` only prints the list.
 
 ## Dev Server
 - Serve at `http://localhost:3000` via `node serve.mjs` (background). Never screenshot `file:///`.

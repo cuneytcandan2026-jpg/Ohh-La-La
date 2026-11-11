@@ -1,0 +1,36 @@
+# Pings Bing and the other IndexNow engines with the pages a deploy added,
+# changed or removed. Hostinger deploys main on its own after the push; the
+# script waits for the new build to be served first, and only ever warns,
+# never fails the run.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'sitemap.xml'
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Manual runs (Actions tab > IndexNow > Run workflow) submit the whole sitemap.
+      - name: Submit changed pages to IndexNow
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            node _project/scripts/indexnow.mjs --all
+          else
+            node _project/scripts/indexnow.mjs "${{ github.event.before }}" "${{ github.sha }}"
+          fi
