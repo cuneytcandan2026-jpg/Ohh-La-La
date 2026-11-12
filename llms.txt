@@ -29,6 +29,7 @@
 - [Home](https://www.oohlalabrasserie.com/): about the brasserie, opening hours, location, reviews and FAQs
 - [Menu](https://www.oohlalabrasserie.com/menu): the full food, coffee, drinks and cocktail menu with prices
 - [Book a table](https://www.oohlalabrasserie.com/book): online table booking with instant confirmation
+- [Coffee card](https://www.oohlalabrasserie.com/loyalty): free loyalty card, a bean per coffee and the 9th coffee free; tap your phone at the counter, no app needed
 - [Private hire](https://www.oohlalabrasserie.com/private-hire): events and private hire enquiries
 - [Gallery](https://www.oohlalabrasserie.com/gallery): photos of the food and interior
 - [Menu PDF](https://www.oohlalabrasserie.com/ooh-la-la-menu.pdf)
