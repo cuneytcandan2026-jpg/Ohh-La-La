@@ -20,6 +20,12 @@
   RewriteEngine On
   RewriteBase /
 
+  # One address for the whole site: send the bare domain (oohlalabrasserie.com) to www,
+  # keeping the path. .well-known is left alone so SSL certificate renewal still works.
+  RewriteCond %{HTTP_HOST} ^oohlalabrasserie\.com$ [NC]
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteRule ^(.*)$ https://www.oohlalabrasserie.com/$1 [R=301,L]
+
   # Internal project files (docs, scripts, source media) live in the repo but are not part of the site
   RewriteRule ^_project/ - [F,L]
   # Repo housekeeping that Hostinger deploys alongside the site: dotfiles and dot-folders
@@ -29,8 +35,12 @@
   RewriteRule ^index\.html$ - [L]
 
   # Redirect stale Squarespace URLs (still linked from Google Business Profile, old search results, socials)
-  RewriteRule ^s/ohlala_menu-3\.pdf$ /ooh-la-la-menu.pdf [R=301,L]
+  RewriteRule ^s/[^/]+\.pdf$ /ooh-la-la-menu.pdf [R=301,L]
   RewriteRule ^jobs/?$ /menu [R=301,L]
+  RewriteRule ^home/?$ / [R=301,L]
+  RewriteRule ^about/?$ /#about [R=301,NE,L]
+  RewriteRule ^contact/?$ /#visit [R=301,NE,L]
+  RewriteRule ^(cart|checkout|shop|account)(/.*)?$ / [R=301,L]
 
   # Prerendered pages (scripts/prerender.mjs): /menu serves menu.html, so crawlers that
   # don't run JavaScript (ChatGPT, Claude, Perplexity...) still get the page's real content
